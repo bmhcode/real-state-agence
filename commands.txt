@@ -1,0 +1,7 @@
+py manage.py makemigrations --dry-run
+py manage.py makemigrations
+
+
+
+Crt + Shift + p and tap sqlit 
+choose sqlit open database

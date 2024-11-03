@@ -1,0 +1,12 @@
+
+Propriété
+ - type : propertie, apartment , office, residential, 
+          commercial, villa, bungalow, news, 
+ - title
+ - address
+ - pieces
+ - surface
+ - description
+ - photo
+ - price
+ - for : Sale, Rent , Sold Out

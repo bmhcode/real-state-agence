@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}   
+  Gallery
+{% endblock title %}
+
+{% block content %}
+
+  <section id="aa-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-gallery-area">
+            <div class="aa-title">
+              <h2>Gallery View</h2>
+              <span></span>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi eum dolorem aut eos, debitis quaerat reiciendis, officiis consectetur ducimus atque suscipit ab at tempora!</p>
+            </div>
+            <!-- Start gallery -->
+            <div class="aa-gallery-content">
+              <div class="aa-gallery-top">
+                <!-- Start gallery menu -->
+                <ul>
+                  <li data-filter="all" class="filter active">All</li>
+                  <li data-filter=".apartment" class="filter">Apartment</li>
+                  <li data-filter=".livingroom" class="filter">Living Room</li>
+                  <li data-filter=".bedroom" class="filter">Bedroom</li>
+                  <li data-filter=".kitchen" class="filter">Kitchen</li>
+                  <li data-filter=".garage" class="filter">Garage</li>
+                </ul>
+              </div>
+              <!-- Start gallery image -->
+              {% comment %} <div id="mixit-container" class="aa-gallery-body"> {% endcomment %}
+                <!-- start single gallery image -->
+                {% for property in properties %}
+                  <div class="aa-single-gallery mix apartment">                  
+                    <div class="aa-single-gallery-item">
+                      <div class="aa-single-gallery-img">
+                        {% comment %} <a href="{{property.get_absolute_url}}"><img  src="{{property.imageURL}}" alt="img"></a> {% endcomment %}
+                        <a href="{% url 'agence:property-detail' property.slug %}"><img  src="{{property.imageURL}}" alt="img"></a>
+                      </div>
+                      <div class="aa-single-gallery-info">
+                        <a class="fancybox" data-fancybox-group="gallery" href="{% url 'agence:property-detail' property.slug %}"><span class="fa fa-eye">
+                        <a class="aa-link" href="{% url 'agence:property-detail' property.slug %}"><span class="fa fa-link"></span></a>
+                      </div>                  
+                    </div>
+                  </div>
+                {% endfor %}
+                <!-- end single gallery image -->
+              {% comment %} </div> {% endcomment %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
