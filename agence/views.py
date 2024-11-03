@@ -66,8 +66,6 @@ class BlogListView(ListView):
         context["blogs"] = Blog.objects.filter(is_shown=True)
         return context  # {% for property in object_list %}
 
-
-
 # def index(request):
 #     agence = Agence.objects.get_or_create()
 #     agence = Agence.objects.get(id=1)
@@ -108,8 +106,7 @@ def sendmessage(request):
     else:
         context = {}
         return render(request,'contact.html', context )
-
-       
+     
 def gallery(request):
     agence = Agence.objects.get_or_create()
     agence = Agence.objects.get(id=1)
@@ -117,7 +114,6 @@ def gallery(request):
 
     context = {'agence': agence,  'page_title':'Gallery', 'properties' : properties}
     return render(request, 'gallery.html',context)
-
 
 # def property_list(request):
 #     agence = Agence.objects.get_or_create()
@@ -147,6 +143,9 @@ def contact(request):
     
     return render(request, 'contact.html',context)
 
+def sendmessage(request):
+    pass
+
 # def blog(request):
     
 #     agence = Agence.objects.get_or_create()
@@ -163,3 +162,4 @@ def register(request):
 def signin(request):
     context={}
     return render(request, 'signin.html',context)
+

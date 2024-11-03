@@ -13,7 +13,7 @@ urlpatterns = [
     path('', HomePageView.as_view(), name="home"),
     path('properties',PropertyListView.as_view(), name="property-list"),
     path('<slug:slug>/',PropertyDetailView.as_view(), name="property-detail"),
-   path('blog',BlogListView.as_view(), name="blog"),
+    path('blog',BlogListView.as_view(), name="blog"),
    
     path('gallery',views.gallery, name="gallery"),
     path('<slug:slug>/',views.agent_detail, name="agent-detail"),
